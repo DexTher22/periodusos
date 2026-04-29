@@ -1,7 +1,17 @@
+/*
+* File: app.js
+* Author: Magyar Márk
+* Copyright: 2026, Magyar Márk
+* Group: Szoft V
+* Date: 2026-04-29
+* Github: https://github.com/DexTher22/periodusos
+* Licenc: MIT
+*/
+
 import * as bootstrap from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
-
+import Swal from "sweetalert2"
 
 const kemiaiElemek = [
   { nev: 'Hidrogén', vegyjel: 'H', rendszam: 1, atomtomeg: 1.008, allapot: 'Gáz' },
@@ -16,7 +26,20 @@ const kemiaiElemek = [
 
 const doc = {
     tbody: document.querySelector('#tbody'),
-    gasCounter: document.querySelector('#gasCounter')
+    gasCounter: document.querySelector('#gasCounter'),
+    aboutButton: document.querySelector('#aboutButton')
+}
+
+doc.aboutButton.addEventListener('click', () => {
+    startAbout()
+})
+
+function startAbout() {
+    Swal.fire({
+        title: 'Névjegy',
+        text: "Magyar Márk, Szoft-I-N, 2026-04-29"
+
+    })
 }
 
 function render(elemek) {
